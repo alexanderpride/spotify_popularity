@@ -12,11 +12,16 @@ const StyledNavLink = Styled(NavLink)`
     }
 `;
 
+
+
 function Sections(props) {
+    // Sections is extracted from app partly for neatness and partly because useRouteMatch() is a hook which can only be
+    // called in functions
 
     let {path, url} = useRouteMatch();
 
-    const access_token = props.access_token;
+    console.log("Data at sections ")
+    console.log(props.config.artists.data[0]);
 
 
     return (
@@ -40,13 +45,15 @@ function Sections(props) {
             </nav>
 
             <Switch>
-                <Route path={`${path}/artists`} render={() => <Artists access_token={access_token}/>}/>
-                <Route path={`${path}/albums`} render={() => <Albums access_token={access_token}/>}/>
+                <Route key={props.config.artists.data} path={`${path}/artists`} render={() => <Artists data={props.config.artists.data} getData={props.config.artists.getData}/>}/>
+                <Route path={`${path}/albums`} render={() => <Albums/>}/>
                 <Route path={`${path}/playlists`} render={() => <p>playlists</p>}/>
                 <Route path={`${path}/`} render={() => <p>home</p>}/>
             </Switch>
         </main>
     )
+
+
 };
 
 export default Sections;

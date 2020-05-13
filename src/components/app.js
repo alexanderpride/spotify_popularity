@@ -1,26 +1,55 @@
 import React from "react";
-import {Switch, Redirect} from "react-router-dom";
+import {Switch, Redirect, useRouteMatch, Route, NavLink} from "react-router-dom";
 
 import "../styles/nav.css";
 
 import Sections from "./sections";
+import {getAllContent} from "./logic/api";
+
+
 
 class App extends React.Component{
 
     constructor(props) {
         super(props);
 
-        let _state = {access_token: ''};
+        let _state = {
+            access_token: '',
+            artist_data: [],
+            album_data: [],
+            playlist_data: []
+        };
 
         if (this.props.location.state){
 
-            _state = {
-                access_token: this.props.location.state.token_type + " " + this.props.location.state.access_token
-            };
+            _state.access_token = this.props.location.state.token_type + " " + this.props.location.state.access_token;
 
         }
 
+        this.getArtistData = this.getArtistData.bind(this);
+
         this.state = _state;
+
+    }
+
+    getArtistData(){
+
+        console.log("Get artist content called")
+
+        const config = {
+            uri: "/me/following?type=artist",
+            getItems: (response) => response.data.artists.items,
+            getNext: (response) => response.data.artists.next,
+        }
+
+        const goto = process.env.REACT_APP_SPOTIFY_API_URL + config.uri;
+
+        getAllContent(goto, this.state.access_token, config, [], (data) => {
+
+            console.log("Callback called")
+            this.setState({artist_data: data})
+
+        })
 
     }
 
@@ -49,7 +78,14 @@ class App extends React.Component{
 
         } else if (this.state.access_token) {
 
-            return <Sections access_token={this.state.access_token}/>
+            const sections_config = {
+                artists: {
+                    data: this.state.artist_data,
+                    getData: this.getArtistData
+                }
+            }
+
+            return <Sections config={sections_config}/>
 
         } else if (!this.state.access_token) {
 
