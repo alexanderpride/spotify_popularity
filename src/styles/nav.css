@@ -1,0 +1,25 @@
+nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    background-color: var(--main-text-colour);
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 10% 0;
+    height: 100%;
+}
+
+li {
+    display: block;
+    height: 20%;
+}
+
+.nav{
+    display: block;
+    height: 100%;
+}

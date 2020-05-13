@@ -1,0 +1,107 @@
+section{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1{
+    color: var(--main-text-colour);
+    font-size: 4em;
+}
+
+h3{
+    color: var(--main-text-colour);
+}
+
+span{
+    color: var(--detail-1);
+}
+
+span:nth-child(2){
+    color: var(--detail-2);
+}
+
+span:nth-child(3){
+    color: var(--detail-3);
+}
+
+button{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    background-color: var(--main-text-colour);
+    padding: 20px 40px;
+    border-radius: 10px;
+    border: var(--main-text-colour) 2px solid;
+    transition: background 250ms ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    margin-top: 2%;
+}
+
+button img {
+    width: 64px;
+    height: 64px;
+    padding-left: 5%;
+    filter: invert(99%) sepia(3%) saturate(202%) hue-rotate(246deg) brightness(114%) contrast(91%)
+}
+
+
+button:hover{
+    color: var(--background-colour);
+    background-color: var(--detail-1);
+    border: var(--detail-2) 2px solid;
+}
+
+button:hover img{
+    filter: invert(58%) sepia(52%) saturate(340%) hue-rotate(140deg) brightness(93%) contrast(89%)
+}
+
+#red{
+    position: absolute;
+    background-color: var(--detail-1-transparent);
+    width: 100%;
+    height: 6.5vw;
+    top: 5%;
+    left: 0px;
+    z-index: -2;
+}
+
+#green{
+    position: absolute;
+    background-color: var(--detail-2-transparent);
+    height: 100%;
+    width: 6.5vw;
+    top: 0;
+    left: 5%;
+    z-index: -1;
+}
+
+#blue{
+    position: absolute;
+    background-color: var(--detail-3-transparent);
+    height: 100%;
+    width: 6.5vw;
+    top: 0;
+    left: 14%;
+    z-index: -3;
+}
+
+/*section:before{*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    z-index: -1;*/
+/*    background-color: var(--detail-1);*/
+/*    border: var(--detail-2) 2px solid;*/
+/*    top: -14%;*/
+/*    width: 100%;*/
+/*    height: 10%;*/
+/*    webkit-transform: skewY(-12deg);*/
+/*    transform: skewY(-12deg);*/
+/*    overflow: hidden;*/
+/*}*/
