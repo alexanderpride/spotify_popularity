@@ -24,7 +24,7 @@ function Sections(props) {
             <nav>
                 <ul>
                     <li>
-                        <StyledNavLink exact colour={"#F3F3F3"} to={`${url}/`} className={"nav"} activeStyle={{backgroundColor: "var(--background-colour)"}}>Home</StyledNavLink>
+                        <StyledNavLink exact colour={"#F3F3F3"} to={`${url}`} className={"nav"} activeStyle={{backgroundColor: "var(--background-colour)"}}>Home</StyledNavLink>
                     </li>
                     <li>
                         <StyledNavLink colour={"#d16666ff"} to={`${url}/artists`} className={"nav"} activeStyle={{backgroundColor: "var(--detail-1)"}}>Artists</StyledNavLink>
