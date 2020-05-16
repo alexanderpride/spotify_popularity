@@ -5,8 +5,6 @@ export function getAllContent(url, access_token, config, current, callback){
     // Recurses until there is no longer a cursor to get (variable name cursor)
     // Adds the data from response data from the call to the list that is passed each time and on the final call it adds it all to state
 
-    console.log("Get all content called")
-
     axios.get(url, {
 
         headers: {

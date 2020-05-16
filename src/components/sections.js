@@ -5,10 +5,14 @@ import Styled from "styled-components";
 import Artists from "./layouts/artists";
 import Albums from "./layouts/albums";
 
+import home_png from "../images/home.png";
+import artist_png from   "../images/artists.png";
+
 
 const StyledNavLink = Styled(NavLink)`
     &:hover {
-        background: ${props => props.colour}
+        background: ${props => props.colour};
+        box-shadow: inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
     }
 `;
 
@@ -20,25 +24,22 @@ function Sections(props) {
 
     let {path, url} = useRouteMatch();
 
-    console.log("Data at sections ")
-    console.log(props.config.artists.data[0]);
-
 
     return (
         <main>
             <nav>
                 <ul>
                     <li>
-                        <StyledNavLink exact colour={"#F3F3F3"} to={`${url}`} className={"nav"} activeStyle={{backgroundColor: "var(--background-colour)"}}>Home</StyledNavLink>
+                        <StyledNavLink exact colour={"#F3F3F3"} to={`${url}`} className={"nav"} activeStyle={{backgroundColor: "var(--background-colour)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}><img src={home_png} alt={"Home"}/></StyledNavLink>
                     </li>
                     <li>
-                        <StyledNavLink colour={"#d16666ff"} to={`${url}/artists`} className={"nav"} activeStyle={{backgroundColor: "var(--detail-1)"}}>Artists</StyledNavLink>
+                        <StyledNavLink colour={"#d16666ff"} to={`${url}/artists`} className={"nav"} activeStyle={{backgroundColor: "var(--detail-1)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}><img src={artist_png} alt={"Artists"}/></StyledNavLink>
                     </li>
                     <li>
-                        <StyledNavLink colour={"#b6c649ff"} to={`${url}/albums`} className={"nav"} activeStyle={{backgroundColor: "var(--detail-2)"}}>Albums</StyledNavLink>
+                        <StyledNavLink colour={"#b6c649ff"} to={`${url}/albums`} className={"nav"} activeStyle={{backgroundColor: "var(--detail-2)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}>Albums</StyledNavLink>
                     </li>
                     <li>
-                        <StyledNavLink colour={"#58a4b0"} to={`${url}/playlists`} className={"nav"} activeStyle={{backgroundColor: "var(--detail-3)"}}>Playlists</StyledNavLink>
+                        <StyledNavLink colour={"#58a4b0"} to={`${url}/playlists`} className={"nav"} activeStyle={{backgroundColor: "var(--detail-3)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}>Playlists</StyledNavLink>
                     </li>
 
                 </ul>

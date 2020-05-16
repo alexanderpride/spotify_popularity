@@ -1,5 +1,4 @@
 import React from "react";
-import {getAllContent} from "../logic/api";
 
 class Artists extends React.Component {
 
@@ -7,7 +6,6 @@ class Artists extends React.Component {
         super(props);
 
         let rendered = [];
-        console.log("Artists rendered with " + this.props.data)
 
         if (this.props.data.length > 0){
 

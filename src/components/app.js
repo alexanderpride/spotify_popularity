@@ -1,5 +1,5 @@
 import React from "react";
-import {Switch, Redirect, useRouteMatch, Route, NavLink} from "react-router-dom";
+import {Switch, Redirect} from "react-router-dom";
 
 import "../styles/nav.css";
 
@@ -34,8 +34,6 @@ class App extends React.Component{
 
     getArtistData(){
 
-        console.log("Get artist content called")
-
         const config = {
             uri: "/me/following?type=artist",
             getItems: (response) => response.data.artists.items,
@@ -46,7 +44,6 @@ class App extends React.Component{
 
         getAllContent(goto, this.state.access_token, config, [], (data) => {
 
-            console.log("Callback called")
             this.setState({artist_data: data})
 
         })

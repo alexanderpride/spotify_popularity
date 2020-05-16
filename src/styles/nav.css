@@ -3,23 +3,34 @@ nav{
     left: 0;
     top: 0;
     bottom: 0;
-    width: 15%;
+    width: auto;
+    padding: 5% 0;
     background-color: var(--main-text-colour);
 }
 
 ul{
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
     list-style: none;
     padding: 0;
-    margin: 10% 0;
+    margin: 0 0;
     height: 100%;
 }
 
 li {
     display: block;
-    height: 20%;
+    flex-basis: auto;
+    /*flex: 1*/
 }
 
 .nav{
     display: block;
-    height: 100%;
+    transition: background 250ms ease-in-out;
+}
+
+.nav img {
+    width: 84px;
+    height: 84px;
+    margin: 10px;
 }
