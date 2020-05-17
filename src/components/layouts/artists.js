@@ -12,7 +12,7 @@ class Artists extends React.Component {
 
         if (this.props.data.length > 0){
 
-            rendered = this.props.data.slice(0, 32);
+            rendered = this.props.data//this.props.data.slice(0, 32);
 
         } else {
 
