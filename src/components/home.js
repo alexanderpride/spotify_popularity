@@ -31,7 +31,7 @@ class Home extends React.Component{
     render() {
 
         return (
-            <section>
+            <div className={"home"}>
                 <h1>Spotify Popularity</h1>
                 <h3>Are you down with the main-stream or a music hipster?</h3>
                 <h3>See the spotify popularity ratings of your favourite <span>albums</span>, <span>artists</span>, <span>songs</span> and <span>playlists</span></h3>
@@ -40,7 +40,7 @@ class Home extends React.Component{
                 <div id={'red'}/>
                 <div id={'blue'}/>
                 <div id={'green'}/>
-            </section>
+            </div>
         )
     }
 }

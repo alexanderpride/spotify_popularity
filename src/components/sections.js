@@ -7,6 +7,9 @@ import Albums from "./layouts/albums";
 
 import home_png from "../images/home.png";
 import artist_png from   "../images/artists.png";
+import playlist_png from "../images/playlists.png";
+import song_png from "../images/songs2.png";
+import album_png from "../images/albums.png";
 
 
 const StyledNavLink = Styled(NavLink)`
@@ -30,17 +33,31 @@ function Sections(props) {
             <nav>
                 <ul>
                     <li>
-                        <StyledNavLink exact colour={"#F3F3F3"} to={`${url}`} className={"nav"} activeStyle={{backgroundColor: "var(--background-colour)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}><img src={home_png} alt={"Home"}/></StyledNavLink>
+                        <StyledNavLink exact colour={"#FFD131"} to={`${url}`} className={"nav"} activeStyle={{backgroundColor: "var(--home)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}>
+                            <img src={home_png} alt={"Home"}/>
+                        </StyledNavLink>
                     </li>
                     <li>
-                        <StyledNavLink colour={"#d16666ff"} to={`${url}/artists`} className={"nav"} activeStyle={{backgroundColor: "var(--detail-1)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}><img src={artist_png} alt={"Artists"}/></StyledNavLink>
+                        <StyledNavLink colour={"#6D5F93"} to={`${url}/songs`} className={"nav"} activeStyle={{backgroundColor: "var(--songs)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}>
+                            <img src={song_png} alt={"Songs"}/>
+                        </StyledNavLink>
                     </li>
                     <li>
-                        <StyledNavLink colour={"#b6c649ff"} to={`${url}/albums`} className={"nav"} activeStyle={{backgroundColor: "var(--detail-2)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}>Albums</StyledNavLink>
+                        <StyledNavLink colour={"#b6c649ff"} to={`${url}/albums`} className={"nav"} activeStyle={{backgroundColor: "var(--albums)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}>
+                            <img src={album_png} alt={"Albums"}/>
+                        </StyledNavLink>
                     </li>
                     <li>
-                        <StyledNavLink colour={"#58a4b0"} to={`${url}/playlists`} className={"nav"} activeStyle={{backgroundColor: "var(--detail-3)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}>Playlists</StyledNavLink>
+                        <StyledNavLink colour={"#d16666ff"} to={`${url}/artists`} className={"nav"} activeStyle={{backgroundColor: "var(--artists)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}>
+                            <img src={artist_png} alt={"Artists"}/>
+                        </StyledNavLink>
                     </li>
+                    <li>
+                        <StyledNavLink colour={"#58a4b0"} to={`${url}/playlists`} className={"nav"} activeStyle={{backgroundColor: "var(--playlists)", boxShadow: "inset 0px 0px 5px 5px rgba(0, 0, 0, 0.2)"}}>
+                            <img src={playlist_png} alt={"Playlists"}/>
+                        </StyledNavLink>
+                    </li>
+
 
                 </ul>
             </nav>

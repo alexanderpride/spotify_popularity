@@ -1,9 +1,11 @@
 body {
   --background-colour: #F3F3F3;
   --main-text-colour: #2c4251ff;
-  --detail-1: #d16666ff;
-  --detail-2: #b6c649ff;
-  --detail-3: #58a4b0;
+  --artists: #d16666ff;
+  --albums: #b6c649ff;
+  --playlists: #58a4b0;
+  --songs: #6D5F93;
+  --home: #FFD131;
 
   --detail-1-transparent: rgba(209, 102, 102, 0.9);
   --detail-2-transparent: rgba(182, 198, 73, 0.9);

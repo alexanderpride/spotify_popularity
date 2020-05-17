@@ -1,0 +1,84 @@
+main{
+    display: flex;
+}
+
+nav{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    /*width: auto;*/
+    background-color: var(--main-text-colour);
+    box-shadow: 5px 0px 2.5px 2.5px rgba(0, 0, 0, 0.1);
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 0 0;
+    height: 100%;
+}
+
+li {
+    display: block;
+    flex-basis: auto;
+}
+
+.nav{
+    display: block;
+    transition: background 250ms ease-in-out;
+}
+
+.nav img {
+    width: 8.31vh;
+    height: 8.31vh;
+    margin: 3.9vh;
+}
+
+section{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2% 0;
+    box-shadow: 0px 5px 2.5px 2.5px rgba(0, 0, 0, 0.1);
+}
+
+.container{
+    width: 100%;
+}
+
+.medallion{
+    background-color: var(--background-colour);
+    padding: 1%;
+    text-align: center;
+    box-shadow: 0px 2px 2.5px 2.5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.medallion:first-child{
+    display: block;
+}
+
+.medallion h1{
+    margin: 0;
+}
+
+.medallion img{
+    width: 240px;
+    height: 240px;
+}
+
+.listedItems{
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+

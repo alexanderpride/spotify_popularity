@@ -1,7 +1,7 @@
 import React from "react";
 import {Switch, Redirect} from "react-router-dom";
 
-import "../styles/nav.css";
+import "../styles/app.css";
 
 import Sections from "./sections";
 import {getAllContent} from "./logic/api";

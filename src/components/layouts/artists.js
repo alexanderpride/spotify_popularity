@@ -1,5 +1,8 @@
 import React from "react";
 
+import Artist from "./artist"
+import ArtistsHero from "./artistsHero"
+
 class Artists extends React.Component {
 
     constructor(props) {
@@ -9,7 +12,7 @@ class Artists extends React.Component {
 
         if (this.props.data.length > 0){
 
-            rendered = this.props.data.slice(0, 20);
+            rendered = this.props.data.slice(0, 32);
 
         } else {
 
@@ -25,18 +28,22 @@ class Artists extends React.Component {
 
     render() {
 
-        let formatted_artists = <li>loading</li>
+        if (this.state.rendered.length > 0) {
 
-        if(this.state.rendered.length > 0) {
+            const _artists = this.state.rendered.map(artist => <Artist key={artist.id} artist={artist}/>)
 
-            const artists = this.state.rendered;
+            return (
+                <div className={"container"}>
+                    <ArtistsHero artists={this.props.data}/>
+                    <div className={"listedItems"}>
+                        {_artists}
+                    </div>
+                </div>
+            )
 
-            formatted_artists = artists.map((artist) => {
-                return <li key={artist.id}><img src={artist.images[2].url} alt={artist.name}/> {artist.popularity}: {artist.name}</li>
-            })
+        } else {
+            return <p>loading</p>
         }
-
-        return formatted_artists
 
     }
 

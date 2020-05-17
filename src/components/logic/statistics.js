@@ -1,6 +1,4 @@
-import React from "react";
-
-function Statistics(items){
+function statistics(items){
 
     let max = false;
     let min = false;
@@ -33,10 +31,10 @@ function Statistics(items){
 
         average: average,
         max: max,
-        min: average
+        min: min
 
     }
 
 };
 
-export default Statistics
+export default statistics
