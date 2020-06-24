@@ -12,7 +12,7 @@ function ArtistsHero(props){
 
         <div>
 
-            <section style={{backgroundColor: "var(--artists)"}}>
+            <section>
 
                 <div className={"medallion"}>
 
@@ -22,7 +22,12 @@ function ArtistsHero(props){
 
                 </div>
 
+                <div className={"title_container"}>
+                        <h1>Artists</h1>
 
+                        <h4>Average</h4>
+                        <h1>{Math.round(stats.average)}</h1>
+                </div>
 
                 <div className={"medallion"}>
 

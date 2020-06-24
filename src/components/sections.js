@@ -4,6 +4,8 @@ import Styled from "styled-components";
 
 import Artists from "./layouts/artists";
 import Albums from "./layouts/albums";
+import Playlists from "./layouts/playlists";
+import Songs from "./layouts/songs";
 
 import home_png from "../images/home.png";
 import artist_png from   "../images/artists.png";
@@ -63,10 +65,17 @@ function Sections(props) {
             </nav>
 
             <Switch>
-                <Route key={props.config.artists.data} path={`${path}/artists`} render={() => <Artists data={props.config.artists.data} getData={props.config.artists.getData}/>}/>
                 <Route path={`${path}/albums`} render={() => <Albums/>}/>
-                <Route path={`${path}/playlists`} render={() => <p>playlists</p>}/>
-                <Route path={`${path}/`} render={() => <p>home</p>}/>
+                <Route path={`${path}/playlists`} render={() => <Playlists/>}/>
+                <Route key={props.config.artists.data} path={`${path}/artists`} render={() => <Artists data={props.config.artists.data} getData={props.config.artists.getData}/>}/>
+                <Route path={`${path}/songs`} render={() => <Songs/>}/>
+                <Route path={`${path}/`} render={() => <div>
+                    <h1>h1 Test</h1>
+                    <h2>h2 Test</h2>
+                    <h3>h3 Test</h3>
+                    <h4>h4 Test</h4>
+                    <h5>h5 Test</h5>
+                </div>}/>
             </Switch>
         </main>
     )

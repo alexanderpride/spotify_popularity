@@ -6,7 +6,6 @@ nav{
     position: sticky;
     top: 0;
     height: 100vh;
-    /*width: auto;*/
     background-color: var(--main-text-colour);
     box-shadow: 5px 0px 2.5px 2.5px rgba(0, 0, 0, 0.1);
 }
@@ -32,12 +31,20 @@ li {
 }
 
 .nav img {
-    width: 8.31vh;
-    height: 8.31vh;
+    width: 48px;
+    height: 48px;
     margin: 3.9vh;
 }
 
-@media only screen and (max-width: 700px){
+.items-list{
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+}
+
+@media only screen and (max-width: 768px){
     nav{
         position: fixed;
         bottom: 0;
@@ -45,7 +52,8 @@ li {
         right: 0;
         top: calc(100vh - 16.11vw);
         height: auto;
-        z-index: 1;
+        z-index: 2;
+        box-shadow: 0px -5px 2.5px 2.5px rgba(0, 0, 0, 0.1);
     }
 
     ul{
@@ -57,76 +65,54 @@ li {
         height: 8.31vw;
         margin: 3.9vw;
     }
+
+    .title_container{
+        order: -1;
+    }
+
+    section{
+        flex-direction: column;
+    }
+
+    .items-list{
+        margin-bottom: 16.11vw;
+    }
 }
 
 
-section{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 2% 0;
-    box-shadow: 0px 5px 2.5px 2.5px rgba(0, 0, 0, 0.1);
-}
 
-.container{
-    width: 100%;
-}
+.item{
 
-.medallion{
-    background-color: var(--background-colour);
-    padding: 1%;
-    text-align: center;
+    width: 160px;
+    margin: 6px;
     box-shadow: 0px 2px 2.5px 2.5px rgba(0, 0, 0, 0.1);
+
+}
+
+.item img{
+
+    width: 160px;
+    height: 160px;
+
+}
+
+.item-details{
+
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 240px;
-    margin: 2%
-}
-
-.medallion:first-child{
-    display: block;
-}
-
-.medallion h1{
-    margin: 0;
-}
-
-.medallion img{
-    width: 240px;
-    height: 240px;
-}
-
-.listedItems{
-    padding: 2%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.panel{
-    margin: 3%;
-    border-radius: 3px;
-    display: flex;
-    width: 256px;
-    height: 128px;
-    box-shadow: 0px 2px 2.5px 2.5px rgba(0, 0, 0, 0.1);
-}
-
-.panel div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: space-between;
-    text-align: center;
-    margin: 2%;
+    align-items: center;
+
 }
 
-.panel img{
-    width: 128px;
-    height: 128px;
-    z-index: 0;
+.item-details *{
+
+    margin: 2px;
+
 }
+
+.loading{
+    margin: 0 auto;
+}
+
+
 

@@ -2,6 +2,7 @@ import React from "react";
 
 import Artist from "./artist"
 import ArtistsHero from "./artistsHero"
+import Loading from "./loading"
 
 class Artists extends React.Component {
 
@@ -12,7 +13,7 @@ class Artists extends React.Component {
 
         if (this.props.data.length > 0){
 
-            rendered = this.props.data//this.props.data.slice(0, 32);
+            rendered = this.props.data;//.slice(0, 32);
 
         } else {
 
@@ -35,14 +36,12 @@ class Artists extends React.Component {
             return (
                 <div className={"container"}>
                     <ArtistsHero artists={this.props.data}/>
-                    <div className={"listedItems"}>
-                        {_artists}
-                    </div>
+                    <div className={"items-list"}> {_artists} </div>
                 </div>
             )
 
         } else {
-            return <p>loading</p>
+            return <Loading/>
         }
 
     }

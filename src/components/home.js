@@ -35,14 +35,13 @@ class Home extends React.Component{
                 <h1>Spotify Popularity</h1>
                 <h3>Are you down with the main-stream or a music hipster?</h3>
                 <h3>See the spotify popularity ratings of your favourite <span>albums</span>, <span>artists</span>, <span>songs</span> and <span>playlists</span></h3>
-                <button onClick={this.connectToSpotify}>Connect to Spotify<img src={spotify_logo} alt={"Spotify "}/></button>
+                <button onClick={this.connectToSpotify}>Connect to Spotify</button>
                 {this.props.location.state && this.props.location.state.error_message && <p>{this.props.location.state.error_message}</p>}
-                <div id={'red'}/>
-                <div id={'blue'}/>
-                <div id={'green'}/>
             </div>
         )
     }
 }
 
 export default Home
+
+//<img src={spotify_logo} alt={"Spotify "}/>

@@ -7,9 +7,6 @@ body {
   --songs: #6D5F93;
   --home: #FFD131;
 
-  --detail-1-transparent: rgba(209, 102, 102, 0.9);
-  --detail-2-transparent: rgba(182, 198, 73, 0.9);
-  --detail-3-transparent: rgba(88, 164, 176, 0.9);
   --white: #ffffff;
 
   background-color: var(--background-colour);
@@ -19,6 +16,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+
+h1{
+
+  font-size: 2rem;
+
+}
+
+h2{
+
+  font-size: 1.5rem;
+
+}
+
+h3{
+
+  font-size: 1rem;
+
+}
+
+h4{
+
+  font-size: 0.8rem;
+
+}
+
+h5{
+
+  font-size: 0.6rem;
+
 }
 
 code {
