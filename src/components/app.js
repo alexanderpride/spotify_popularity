@@ -27,6 +27,7 @@ class App extends React.Component{
         }
 
         this.getArtistData = this.getArtistData.bind(this);
+        this.sortArtists = this.sortArtists.bind(this);
 
         this.state = _state;
 
@@ -44,7 +45,33 @@ class App extends React.Component{
 
         getAllContent(goto, this.state.access_token, config, [], (data) => {
 
-            this.setState({artist_data: data})
+
+            const _data = data.sort((a, b) => (a.popularity > b.popularity) ? -1 : 1)
+            this.setState({artist_data: _data})
+
+        })
+
+    }
+
+    sortArtists(){
+
+        let _data
+
+        console.log(this.state.artist_data[0]);
+
+        if (this.state.artist_data[0].popularity > this.state.artist_data[this.state.artist_data.length - 1].popularity){
+
+            _data = this.state.artist_data.sort((a, b) => (a.popularity > b.popularity) ? 1 : -1);
+
+        } else {
+
+            _data = this.state.artist_data.sort((a, b) => (a.popularity > b.popularity) ? -1 : 1);
+
+        }
+
+        this.setState({
+
+            artist_data: _data
 
         })
 
@@ -77,8 +104,10 @@ class App extends React.Component{
 
             const sections_config = {
                 artists: {
+                    key: this.state.artist_data.length > 0 ? this.state.artist_data.reduce((accum, current) => accum + current.name) : " ",
                     data: this.state.artist_data,
-                    getData: this.getArtistData
+                    getData: this.getArtistData,
+                    sort: this.sortArtists
                 }
             }
 

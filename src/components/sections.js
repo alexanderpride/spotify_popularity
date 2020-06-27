@@ -67,7 +67,7 @@ function Sections(props) {
             <Switch>
                 <Route path={`${path}/albums`} render={() => <Albums/>}/>
                 <Route path={`${path}/playlists`} render={() => <Playlists/>}/>
-                <Route key={props.config.artists.data} path={`${path}/artists`} render={() => <Artists data={props.config.artists.data} getData={props.config.artists.getData}/>}/>
+                <Route key={props.config.artists.key} path={`${path}/artists`} render={() => <Artists data={props.config.artists.data} getData={props.config.artists.getData} sort={props.config.artists.sort}/>}/>
                 <Route path={`${path}/songs`} render={() => <Songs/>}/>
                 <Route path={`${path}/`} render={() => <div>
                     <h1>h1 Test</h1>
@@ -80,7 +80,6 @@ function Sections(props) {
         </main>
     )
 
-
-};
+}
 
 export default Sections;
