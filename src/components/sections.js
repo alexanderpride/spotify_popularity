@@ -2,7 +2,7 @@ import React from "react";
 import {Switch, Route, NavLink, useRouteMatch} from "react-router-dom";
 import Styled from "styled-components";
 
-import Artists from "./layouts/artists";
+import Artists from "./layouts/artistsComponents/artists";
 import Albums from "./layouts/albums";
 import Playlists from "./layouts/playlists";
 import Songs from "./layouts/songs";
@@ -67,7 +67,7 @@ function Sections(props) {
             <Switch>
                 <Route path={`${path}/albums`} render={() => <Albums/>}/>
                 <Route path={`${path}/playlists`} render={() => <Playlists/>}/>
-                <Route key={props.config.artists.key} path={`${path}/artists`} render={() => <Artists data={props.config.artists.data} getData={props.config.artists.getData} sort={props.config.artists.sort}/>}/>
+                <Route key={props.config.artists.data} path={`${path}/artists`} render={() => <Artists data={props.config.artists.data} getData={props.config.artists.getData} sort={props.config.artists.sort}/>}/>
                 <Route path={`${path}/songs`} render={() => <Songs/>}/>
                 <Route path={`${path}/`} render={() => <div>
                     <h1>h1 Test</h1>

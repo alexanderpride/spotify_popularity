@@ -1,6 +1,6 @@
 import React from "react";
 
-import statistics from "../logic/statistics";
+import statistics from "../../logic/statistics";
 import ArtistMedallion from "./artistMedallion";
 
 function ArtistsHero(props){
